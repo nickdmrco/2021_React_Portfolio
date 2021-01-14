@@ -17,15 +17,15 @@ const Navbar = () => {
   return (
     <div>
       <Nvbr color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">Nicholas De Marco</NavbarBrand>
+        <NavbarBrand onClick={toggleNavbar} className="mr-auto">Nicholas De Marco</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/components/">Projects</NavLink>
+              <NavLink href="/projects">Projects</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">About</NavLink>
+              <NavLink href="/about">About</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/nickdmrco" target="_blank">Github</NavLink>

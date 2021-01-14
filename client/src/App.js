@@ -4,7 +4,7 @@ import ItemContext from './utils/ItemContext'
 import { Container, Row, Col } from 'reactstrap'
 import Form from './components/Form'
 import Jumbotron from './components/Jumbotron'
-import List from './components/List'
+import List from './components/about'
 import Navbar from './components/Navbar'
 
 const {

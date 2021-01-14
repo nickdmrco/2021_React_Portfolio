@@ -1,20 +1,37 @@
-import { 
-  Jumbotron as Jmbtrn, 
-  Button } from 'reactstrap'
 
-const Jumbotron = () => {
+
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
+
+export default function CenteredGrid() {
+  const classes = useStyles();
+
   return (
-    <Jmbtrn>
-      <h1 className="display-3">About Nick.</h1>
-      <p className="lead">An aspiring web developer.</p>
-      <hr className="my-2" />
-      <p>I have been in the resturaunt industry for almost 5 years now as a sever and bartender. Currently
-            involved in the web development program at UCI, I am reaching forward for a career in all around software development.</p>
-      <p className="lead">
-        <Button color="primary">Learn More</Button>
-      </p>
-    </Jmbtrn>
-  )
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Paper className={classes.paper}>Weather Dashboard</Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>Code Quiz</Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>Workout Week Schedule</Paper>
+        </Grid>
+      </Grid>
+    </div>
+  );
 }
-
-export default Jumbotron
