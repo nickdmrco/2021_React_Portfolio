@@ -17,15 +17,18 @@ const Navbar = () => {
   return (
     <div>
       <Nvbr color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">To-Do List App</NavbarBrand>
+        <NavbarBrand href="/" className="mr-auto">Nicholas De Marco</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">Projects</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="/components/">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/nickdmrco" target="_blank">Github</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
