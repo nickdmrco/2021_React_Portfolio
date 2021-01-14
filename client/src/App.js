@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import ItemAPI from './utils/ItemAPI'
 import ItemContext from './utils/ItemContext'
 import { Container, Row, Col } from 'reactstrap'
-import Form from './components/Form'
-import Jumbotron from './components/Jumbotron'
+import Form from './components/CodeQ'
+import Jumbotron from './components/WeatherD'
 import List from './components/about'
 import Navbar from './components/Navbar'
 
@@ -62,14 +62,7 @@ const App = () => {
           <Jumbotron />
         </Row>
         <Row>
-          <ItemContext.Provider value={itemState}>
-            <Col xs={6}>
-              <Form />
-            </Col>
-            <Col xs={6}>
-              <List />
-            </Col>
-          </ItemContext.Provider>
+          <Form/>
         </Row>
       </Container>
     </>
