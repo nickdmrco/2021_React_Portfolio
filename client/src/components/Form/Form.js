@@ -1,34 +1,36 @@
-import { useContext } from 'react'
-import {
-  Button,
-  Form as Frm,
-  FormGroup,
-  Label,
-  Input
-} from 'reactstrap'
-import ItemContext from '../../utils/ItemContext'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import codeQuiz from "../../assets/codingQuiz.png";
 
-const Form = () => {
+const useStyles = makeStyles((theme) => ({
+ root: {
+  flexGrow: 1,
+ },
+ paper: {
+  padding: theme.spacing(2),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+ },
+}));
 
-  const {
-    item,
-    handleInputChange,
-    handleAddItem
-  } = useContext(ItemContext)
+export default function CenteredGrid() {
+ const classes = useStyles();
 
-  return (
-    <Frm onSubmit={handleAddItem}>
-      <FormGroup>
-        <Label htmlFor="item">Item</Label>
-        <Input 
-          type="text" 
-          name="item"
-          value={item}
-          onChange={handleInputChange} />
-      </FormGroup>
-      <Button color="primary" onClick={handleAddItem}>Add Item</Button>
-    </Frm>
-  )
+ return (
+  <div className={classes.root}>
+   <Grid container spacing={3}>
+    <Grid item xs={12}>
+     <Paper className={classes.paper}>Weather Dashboard</Paper>
+    </Grid>
+    <Grid item xs={6}>
+     <Paper className={classes.paper}>Code Quiz</Paper>
+    </Grid>
+    <Grid item xs={6}>
+     <Paper className={classes.paper}>Workout Week Schedule</Paper>
+    </Grid>
+   </Grid>
+  </div>
+ );
 }
-
-export default Form
